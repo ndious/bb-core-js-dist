@@ -8,8 +8,12 @@
   "website": "https://backbee.com/",
   "repository": "https://github.com/ndufreche/BbCoreJs",
   "logo": "https://avatars1.githubusercontent.com/u/8198689?v=3&amp;s=200",
-  "success_url": "/",
+  "success_url": "/conposer.json",
   "scripts": {
     "postdeploy": "node build.js"
-  }
+  },
+  "addons": [
+    "newrelic",
+    "papertrail"
+  ]
 }
