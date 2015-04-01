@@ -12,13 +12,16 @@ var fs = require('fs-extra'),
         var deployBranch = 'composer';
 
         require('child_process').exec('git rev-parse HEAD', function (error, rev) {
-            console.log(rev);
-
-            exec('git config user.name ' + process.env.GIT_NAME);
-            exec('git config user.email ' + process.env.GIT_EMAIL);
+            if (process.env.GIT_NAME) {
+                exec('git config user.name ' + process.env.GIT_NAME);
+            }
+            if (process.env.GIT_EMAIL) {
+                exec('git config user.email ' + process.env.GIT_EMAIL);
+            }
             exec('git add --all');
             exec('git commit -m "Built from ' + rev + '"');
-            exec('git push -q ' + deployUrl + ' ' + deployBranch);
+            exec('git remote add dist ' + deployUrl)
+            exec('git push -q dist ' + deployBranch);
         });
     };
 
