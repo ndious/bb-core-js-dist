@@ -32,13 +32,13 @@ fs.mkdirs('dist', function (err) {
      if (err) {
         errorPrint(err, 'CSS dir not created');
     } else {
-        fs.mkdirs('css', function (err) {
+        fs.mkdirs('dist/css', function (err) {
             if (err) {
                 errorPrint(err, 'CSS dir not created');
             } else {
                 console.log('Strat importing css');
 
-                fs.copy('html/css', 'css/', function (err) {
+                fs.copy('html/css', 'dist/css/', function (err) {
                     if (err) {
                         errorPrint(err, 'Vendor dir not update from bower_components');
                     }
@@ -46,19 +46,19 @@ fs.mkdirs('dist', function (err) {
             }
         });
 
-        fs.mkdirs('vendor', function (err) {
+        fs.mkdirs('dist/vendor', function (err) {
             if (err) {
                 errorPrint(err, 'Vendor dir not created');
             } else {
                 console.log('Strat importing vendors');
 
-                fs.copy('node_modules/jsclass', 'vendor/jsclass', function (err) {
+                fs.copy('node_modules/jsclass', 'dist/vendor/jsclass', function (err) {
                     if (err) {
                         errorPrint(err, 'Vendor dir not update from node_modules');
                     }
                 });
 
-                fs.copyRecursive('bower_components/', 'vendor/', function (err) {
+                fs.copyRecursive('bower_components/', 'dist/vendor/', function (err) {
                     if (err) {
                         errorPrint(err, 'Vendor dir not update from bower_components');
                     }
