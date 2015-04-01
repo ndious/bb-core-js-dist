@@ -1,6 +1,7 @@
 var fs = require('fs-extra'),
 
-    exec = require('child_process').execSync,
+    exec = require('child_process').exec,
+    execSync = require('child_process').execSync,
 
     errorPrint = function (err, message) {
         console.log(message);
@@ -10,14 +11,15 @@ var fs = require('fs-extra'),
     gitPublish = function () {
         var deployUrl = 'https://' + process.env.GIT_TOKEN + '@github.com/ndufreche/BbCoreJs.git';
         var deployBranch = 'composer';
-        var rev = exec('git rev-parse HEAD');
-        console.log(rev.stdout);
+        exec('git rev-parse HEAD', function (error, rev) {
+            console.log(rev);
 
-        exec('git config user.name ' + process.env.GIT_NAME);
-        exec('git config user.email ' + process.env.GIT_EMAIL);
-        exec('git add --all');
-        exec('git commit -m "Built from ' + rev + '"');
-        exec('git push -q ' + deployUrl + ' ' + deployBranch);
+            execSync('git config user.name ' + process.env.GIT_NAME);
+            execSync('git config user.email ' + process.env.GIT_EMAIL);
+            execSync('git add --all');
+            execSync('git commit -m "Built from ' + rev + '"');
+            execSync('git push -q ' + deployUrl + ' ' + deployBranch);
+        });
     };
 
 if (parseInt(process.env.TRAVIS_PULL_REQUEST, 10) > 0) {
