@@ -8,10 +8,10 @@ var fs = require('fs-extra'),
     },
 
     gitPublish = function () {
-        var repo = exec('git config remote.origin.url').replace(/^(?:git@|https:\/\/)/, '').trim(),
-            deployUrl = 'https://' + process.env.GIT_TOKEN + '@' + repo,
-            deployBranch = 'composer',
-            rev = exec('git rev-parse HEAD').trim();
+        var deployUrl = 'https://' + process.env.GIT_TOKEN + '@github.com/ndufreche/BbCoreJs.git';
+        var deployBranch = 'composer';
+        var rev = exec('git rev-parse HEAD');
+        console.log(rev);
 
         exec('git config user.name ' + process.env.GIT_NAME);
         exec('git config user.email ' + process.env.GIT_EMAIL);

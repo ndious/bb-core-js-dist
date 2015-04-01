@@ -1,0 +1,74 @@
+#bb5-ui #bb5-ui .container:before,
+#bb5-ui #bb5-ui .container:after,
+#bb5-ui #bb5-ui .container-fluid:before,
+#bb5-ui #bb5-ui .container-fluid:after,
+#bb5-ui #bb5-ui .row:before,
+#bb5-ui #bb5-ui .row:after,
+#bb5-ui #bb5-ui .form-horizontal .form-group:before,
+#bb5-ui #bb5-ui .form-horizontal .form-group:after,
+#bb5-ui #bb5-ui .btn-toolbar:before,
+#bb5-ui #bb5-ui .btn-toolbar:after,
+#bb5-ui #bb5-ui .btn-group-vertical > .btn-group:before,
+#bb5-ui #bb5-ui .btn-group-vertical > .btn-group:after,
+#bb5-ui #bb5-ui .nav:before,
+#bb5-ui #bb5-ui .nav:after,
+#bb5-ui #bb5-ui .navbar:before,
+#bb5-ui #bb5-ui .navbar:after,
+#bb5-ui #bb5-ui .navbar-header:before,
+#bb5-ui #bb5-ui .navbar-header:after,
+#bb5-ui #bb5-ui .navbar-collapse:before,
+#bb5-ui #bb5-ui .navbar-collapse:after,
+#bb5-ui #bb5-ui .pager:before,
+#bb5-ui #bb5-ui .pager:after {
+  content: " ";
+  display: table;
+}
+#bb5-ui #bb5-ui .container:after,
+#bb5-ui #bb5-ui .container-fluid:after,
+#bb5-ui #bb5-ui .row:after,
+#bb5-ui #bb5-ui .form-horizontal .form-group:after,
+#bb5-ui #bb5-ui .btn-toolbar:after,
+#bb5-ui #bb5-ui .btn-group-vertical > .btn-group:after,
+#bb5-ui #bb5-ui .nav:after,
+#bb5-ui #bb5-ui .navbar:after,
+#bb5-ui #bb5-ui .navbar-header:after,
+#bb5-ui #bb5-ui .navbar-collapse:after,
+#bb5-ui #bb5-ui .pager:after {
+  clear: both;
+}
+#bb5-ui,
+#bb5-ui * {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333333;
+  background: none;
+  width: auto;
+  height: auto;
+}
+#bb5-ui .ui-dialog {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #cecece;
+}
+#bb5-ui .ui-dialog .ui-dialog-titlebar {
+  padding: .4em 1em;
+}
+#bb5-ui .ui-dialog .ui-draggable-handle {
+  cursor: move;
+}
+#bb5-ui .ui-widget-header {
+  background-color: #333333;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  border-width: 0;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.2em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: normal;
+  color: #fff;
+}
