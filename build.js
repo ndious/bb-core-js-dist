@@ -1,7 +1,5 @@
 var fs = require('fs-extra'),
 
-    sys = require('sys'),
-
     exec = require('child_process').execSync,
 
     errorPrint = function (err, message) {
@@ -58,7 +56,7 @@ fs.mkdirs('dist', function (err) {
                     }
                 });
 
-                fs.copyRecursive('bower_components/', 'dist/vendor/', function (err) {
+                fs.copy('bower_components/', 'dist/vendor/', function (err) {
                     if (err) {
                         errorPrint(err, 'Vendor dir not update from bower_components');
                     }
