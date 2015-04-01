@@ -11,7 +11,7 @@ var fs = require('fs-extra'),
         var deployUrl = 'https://' + process.env.GIT_TOKEN + '@github.com/ndufreche/BbCoreJs.git';
         var deployBranch = 'composer';
         var rev = exec('git rev-parse HEAD');
-        console.log(rev);
+        console.log(rev.stdout);
 
         exec('git config user.name ' + process.env.GIT_NAME);
         exec('git config user.email ' + process.env.GIT_EMAIL);
