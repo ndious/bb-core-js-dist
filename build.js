@@ -8,8 +8,8 @@ var fs = require('fs-extra'),
     },
 
     gitPublish = function () {
-        var deployUrl = 'https://' + process.env.GIT_TOKEN + '@github.com/ndufreche/BbCoreJs.git';
-        var deployBranch = 'composer';
+        var deployUrl = 'https://' + process.env.GIT_TOKEN + '@github.com/backbee/bb-core-js-dist.git';
+        var deployBranch = 'origin';
 
         require('child_process').exec('git rev-parse HEAD', function (error, rev) {
             if (process.env.GIT_NAME) {
